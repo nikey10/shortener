@@ -1,0 +1,22 @@
+<h2>Popular websites</h2>
+<%= link_to 'Back', root_path, class: 'btn btn-primary'%>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Website</th>
+      <th>Short version</th>
+      <th>Visits</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @websites.each do |w| %>
+      <tr>
+        <td><%= w.title %></td>
+        <td><%= link_to w.url, w.url %></td>
+        <td><%= link_to root_url + w.short, root_url + w.short %></td>
+        <td><b><%= w.visits%></b></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
